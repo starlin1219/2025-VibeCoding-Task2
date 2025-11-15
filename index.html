@@ -466,17 +466,141 @@
         flex: 1 1 0;
       }
 
-      .about-note {
-        font-size: 0.85rem;
+      .about-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.25rem 0.9rem;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background-color: rgba(15, 23, 42, 0.9);
         color: var(--color-text-muted);
-        padding: 0.75rem 0.9rem;
-        border-radius: 0.9rem;
-        border: 1px dashed rgba(148, 163, 184, 0.75);
-        background-color: rgba(15, 23, 42, 0.95);
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
       }
 
-      .about-note strong {
+      .about-eyebrow-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #f9fafb 0,
+          #22d3ee 40%,
+          #0284c7 85%
+        );
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.9);
+      }
+
+      .about-lead {
+        margin: 0 0 0.9rem;
+        font-size: 0.95rem;
         color: var(--color-text);
+      }
+
+      .about-secondary {
+        margin: 0 0 1.25rem;
+        font-size: 0.93rem;
+        color: var(--color-text-muted);
+      }
+
+      .about-list-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0 0 0.4rem;
+        color: var(--color-text);
+      }
+
+      .about-highlight-list {
+        list-style: none;
+        margin: 0 0 1.5rem;
+        padding: 0;
+      }
+
+      .about-highlight-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        padding: 0.35rem 0;
+      }
+
+      .about-highlight-bullet {
+        width: 0.55rem;
+        height: 0.55rem;
+        margin-top: 0.3rem;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #f9fafb 0,
+          #38bdf8 45%,
+          #0f172a 90%
+        );
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+      }
+
+      .about-highlight-text strong {
+        color: var(--color-text);
+      }
+
+      .about-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+      }
+
+      .about-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.55rem 1.25rem;
+        border-radius: var(--radius-pill);
+        border: 1px solid transparent;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.18s ease, color 0.18s ease,
+          border-color 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+        white-space: nowrap;
+      }
+
+      .about-btn-primary {
+        background: radial-gradient(
+          circle at 0 0,
+          rgba(56, 189, 248, 0.7),
+          #0f172a
+        );
+        border-color: rgba(56, 189, 248, 0.9);
+        color: #f9fafb;
+        box-shadow: 0 16px 30px rgba(15, 23, 42, 0.7);
+      }
+
+      .about-btn-primary:hover,
+      .about-btn-primary:focus-visible {
+        background: radial-gradient(
+          circle at 100% 0,
+          rgba(56, 189, 248, 0.9),
+          #020617
+        );
+        transform: translateY(-1px);
+        text-decoration: none;
+      }
+
+      .about-btn-secondary {
+        border-color: rgba(148, 163, 184, 0.9);
+        background-color: rgba(15, 23, 42, 0.95);
+        color: var(--color-text-muted);
+      }
+
+      .about-btn-secondary:hover,
+      .about-btn-secondary:focus-visible {
+        background-color: rgba(15, 23, 42, 0.99);
+        color: var(--color-text);
+        transform: translateY(-1px);
+        text-decoration: none;
       }
 
       .about-image-wrapper {
@@ -842,39 +966,64 @@
           <div class="container">
             <div class="about-inner">
               <div class="about-content">
-                <div class="chip-note">
-                  <span class="chip-dot"></span>
-                  <span>ABOUT 區占位內容</span>
+                <div class="about-eyebrow">
+                  <span class="about-eyebrow-dot"></span>
+                  <span>ABOUT · 關於我</span>
                 </div>
-                <h2 id="about-heading" class="section-title">
-                  關於我（之後會用 Section SDD 替換）
-                </h2>
-                <p class="section-intro">
-                  這裡目前是 About 區的占位內容，之後會用另一個 Section SDD
-                  Prompt
-                  產生更完整的個人介紹，包括背景經歷、學習路徑、職涯目標與個人特色等文字敘述。
+                <h2 id="about-heading" class="section-title">關於我</h2>
+                <p class="about-lead">
+                  我目前主要專注在前端開發與教學，平常會參與網頁專案製作、課程內容設計，也偶爾接一些與前端相關的自由接案。日常使用的技術包含
+                  HTML、CSS、JavaScript，以及現代前端框架與開發流程。
                 </p>
-                <p class="about-note">
-                  開發者說明：未來當你準備好正式的關於我內容時，請使用
-                  <strong>Section SDD 的 Prompt</strong>
-                  產生全新的 About 區
-                  <strong>&lt;section&gt; 程式碼</strong>，再將產生出的區塊
-                  <strong
-                    >完整貼在 &lt;!-- SECTION:ABOUT-START --&gt; 與 &lt;!--
-                    SECTION:ABOUT-END --&gt; 之間</strong
-                  >， 完全覆蓋目前的占位版面與文字。
+                <p class="about-secondary">
+                  過去有不同領域的學習與工作經驗，讓我特別重視溝通與說明的清楚度。比起只把功能做出來，我更在意「為什麼這樣做」、怎麼把複雜的東西講得容易理解，讓合作夥伴與學員都能放心一起往前。
                 </p>
+
+                <p class="about-list-title">我可以特別幫上忙的幾件事：</p>
+                <ul class="about-highlight-list">
+                  <li class="about-highlight-item">
+                    <span class="about-highlight-bullet"></span>
+                    <span class="about-highlight-text">
+                      <strong>前端介面實作與 RWD 調整：</strong>
+                      將設計稿轉成穩定可維護的網頁畫面，並優化在手機、平板與桌機上的瀏覽體驗。
+                    </span>
+                  </li>
+                  <li class="about-highlight-item">
+                    <span class="about-highlight-bullet"></span>
+                    <span class="about-highlight-text">
+                      <strong>教學與文件撰寫：</strong>
+                      擅長把技術流程拆解成步驟與圖示，撰寫給非工程背景也能理解的教學內容與說明文件。
+                    </span>
+                  </li>
+                  <li class="about-highlight-item">
+                    <span class="about-highlight-bullet"></span>
+                    <span class="about-highlight-text">
+                      <strong>合作溝通與需求整理：</strong>
+                      能協助整理專案需求、釐清優先順序，將想法轉成具體可實作的任務與開發規劃。
+                    </span>
+                  </li>
+                </ul>
+
+                <div class="about-actions">
+                  <a class="about-btn about-btn-primary" href="#projects"
+                    >查看作品集</a
+                  >
+                  <a class="about-btn about-btn-secondary" href="#contact"
+                    >聯絡我</a
+                  >
+                </div>
               </div>
               <div class="about-image-wrapper">
                 <div class="about-image-card">
                   <img
-                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
-                    alt="在桌面前規劃與書寫筆記的開發者示意照片"
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+                    alt="專注在螢幕前撰寫程式碼的工程師示意照片"
                     loading="lazy"
                   />
                   <p class="about-image-caption">
-                    圖片占位：此處可替換成個人照片、工作環境或任何能代表你風格的形象圖。之後產生的新
-                    section 若有不同的排版結構，可自由決定是否保留這張圖。
+                    圖片示意：目前使用 Unsplash
+                    上「寫程式的工程師」風格照片，代表日常專注於前端開發與協作的工作場景。若之後有自己的形象照或插畫，也可以在新的
+                    section 中直接更換成個人化圖片。
                   </p>
                 </div>
               </div>
